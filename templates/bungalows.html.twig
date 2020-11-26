@@ -1,0 +1,122 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/css/mdb.min.css">
+{% endblock %}
+
+ {% block title %}{{ parent() }}| Bungalows {% endblock %}
+
+
+
+{% block main %}
+
+    <div class="container">
+
+        <!-- Card deck -->
+        <div class="card-deck row">
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <!-- Card -->
+                <div class="card">
+
+                    <!--Card image-->
+                    <div class="view overlay">
+                        <img class="card-img-top" src="{{ asset("img/sanbij.jpg") }}" alt="Card image cap">
+                        <a href="{{ path('bungalow_reservation', {'id': 1}) }}">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <!--Card content-->
+                    <div class="card-body">
+
+                        <!--Title-->
+                        <h4 class="card-title">SANBIJ BUNGALOW</h4>
+                        <!--Text-->
+                        <p class="card-text">Jusqu'à 2 personnes</p>
+                        <p class="card-text">Tarif par nuit : </p>
+                        <p class="card-text">A partir 7000 vatu</p>
+                        <p class="card-text">Petit-déjeuner inclus</p>
+                        <a href="{{ path('bungalow_reservation', {'id': 1}) }}">
+                            <button type="button" class="btn btn-primary btn-lg mb-auto" title="Cliquez pour réserver">
+                                Réserver
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+                <!-- Card -->
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <!-- Card -->
+                <div class="card mb-4">
+
+                    <!--Card image-->
+                    <div class="view overlay">
+                        <img class="card-img-top" src="{{ asset("img/flaoa.jpg") }}" alt="Card image cap">
+                        <a href="{{ path('bungalow_reservation', {'id': 2}) }}">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <!--Card content-->
+                    <div class="card-body">
+
+                        <!--Title-->
+                        <h4 class="card-title">FLAOA BUNGALOW</h4>
+                        <!--Text-->
+                        <p class="card-text">Jusqu'à 3 personnes</p>
+                        <p class="card-text">Tarif par nuit : </p>
+                        <p class="card-text">A partir 10000 vatu</p>
+                        <p class="card-text">Petit-déjeuner inclus</p>
+                        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                        <a href="{{ path('bungalow_reservation', {'id': 2}) }}">
+                            <button type="button" class="btn btn-primary btn-lg mb-auto" title="Cliquez pour réserver">
+                                Réserver
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+                <!-- Card -->
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <!-- Card -->
+                <div class="card mb-4">
+
+                    <!--Card image-->
+                    <div class="view overlay">
+                        <img class="card-img-top" src="{{ asset("img/pidjin.jpg") }}" alt="Card image cap">
+                        <a href="{{ path('bungalow_reservation', {'id': 3}) }}">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <!--Card content-->
+                    <div class="card-body">
+
+                        <!--Title-->
+                        <h4 class="card-title">PIDJINS & PIKINI BUNGALOWS</h4>
+                        <!--Text-->
+                        <p class="card-text">Jusqu'à 7 personnes</p>
+                        <p class="card-text">Tarif par nuit :</p>
+                        <p class="card-text">A partir de 10000 vatu</p>
+                        <p class="card-text">Petit-déjeuner inclus</p>
+                        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                        <a href="{{ path('bungalow_reservation', {'id': 3}) }}">
+                            <button type="button" class="btn btn-primary btn-lg mb-auto">Réserver</button>
+                        </a>
+                    </div>
+
+                </div>
+                <!-- Card -->
+            </div>
+
+
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/css/mdb.min.css">
+{% endblock %}
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <h1>Matevulu Lodge Freediving</h1>
+        </div>
+        <div class="row">
+            <h2>Plongez avec Édouard, instructeur d'apnée AIDA international</h2>
+        </div>
+
+        <div class="row" id="plongees">
+            {% for plongee in plongees %}
+
+                <a href="{{ path('apnee_reservation', {'id': plongee.id}) }}" title="Cliquez pour réserver">
+                    {{ plongee.libelle }} Profondeur maximum : {{ plongee.profondeurMax }}m - Nombre de personnes
+                    maximum
+                    : {{ plongee.maxPersonne }} <br> {{ plongee.infos }}
+                    <hr>
+                </a>
+
+
+            {% endfor %}
+        </div>
+        <br>
+
+        <p>
+            Inclus : masque, palmes, tuba, frais de certification, eau & snack pour Niveaux 1-2-3
+            Non inclus combinaison, déjeuner, assurance dive (sur demande: 1500vt)
+            Pour les séances en trou bleu, les frais d'entrée sont à la charge du pratiquant
+        </p>
+
+
+        <img class="img-responsive" src="{{ asset('img/aida-logo.png') }}" alt="logo aida">
+
+    </div>
+{% endblock %}
+
+{% block title %}{{ parent() }}| Apnee {% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+{% form_theme form1 'bootstrap_4_layout.html.twig' %}
+{% form_theme form2 'bootstrap_4_layout.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/css/mdb.min.css">
+{% endblock %}
+{% block main %}
+
+    <div class="container">
+        <h2>{{ 'Demande de réservation pour '~plongee.libelle }}</h2>
+        <div class="row">
+            <div class="col" id="form">
+
+                {{ form_start(form2) }}
+                {{ form_start(form1, {'action': path('apnee_reservation', { 'id': plongee.id })}) }}
+                <div class="row">
+                    <div class="col-md-6">{{ form_row(form2.Nom) }}</div>
+                    <div class="col-md-6">{{ form_row(form2.Prenom) }}</div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">{{ form_row(form2.Mail) }}</div>
+                    <div class="col-md-6">{{ form_row(form2.Telephone) }}</div>
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-4">{{ form_row(form2.Rue) }}</div>
+                    <div class="col-md-4">{{ form_row(form2.CodePostal) }}</div>
+                    <div class="col-md-4">{{ form_row(form2.Ville) }}</div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">{{ form_row(form1.dateDebut)}}</div>
+                    <div class="col-md-6">{{ form_row(form1.dateFin) }}</div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-6">{{ form_row(form1.nbPersonnes) }}</div>
+                    <div class="col-md-6">{{ form_row(form1.prix) }}</div>
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <button type="submit" class="btn btn-success">Envoyer</button>
+
+            <a type="reset" class="btn btn-danger" href="{{ path('home') }}">Annuler</a>
+            {{ form_rest(form2) }}
+            {{ form_rest(form1) }}
+            {{ form_end(form2) }}
+            {{ form_end(form1) }}
+        </div>
+
+    </div>
+    <pre>
+
+
+</pre>
+
+{% endblock %}
+
+{% block title %}{{ parent() }}| Reservation Apnée{% endblock %}
+
